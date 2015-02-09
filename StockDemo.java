@@ -89,4 +89,7 @@ public class StockDemo
     {
         return manager;
     }
+    public void printbyorder(){
+        manager.printByOrder();
+    }
 }

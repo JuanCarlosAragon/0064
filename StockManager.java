@@ -88,7 +88,7 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        int quantityStock = -1;
+        int quantityStock = 0;
             if(findProduct(id) != null){
                 quantityStock = findProduct(id).getQuantity();
             }
@@ -135,5 +135,28 @@ public class StockManager
         
             
         return toReturn;
+    }
+    
+    /**
+     * Imprime los detalles de los productos por orden de stock
+     */
+    public void printByOrder(){
+        int maxStock = 0;
+        //Primero buscamos el articulo con mas stock
+        for(Product producto : stock){
+            if(producto.getQuantity() > maxStock){
+                maxStock = producto.getQuantity();
+            }
+        }
+        //Luego Imprimimos por orden
+        int criba = 0;
+        while(criba <= maxStock){
+            for(Product producto : stock){
+                if(producto.getQuantity()==criba){
+                    System.out.println(producto.toString());
+                }
+            }
+            criba++;
+        }
     }
 }
