@@ -27,7 +27,13 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        if(findProduct(item.getID()) !=  null){
+            System.out.println("Error: El Artículo ya existe.");
+        }
+        else{
+            stock.add(item);
+        }
+        
     }
     
     /**
@@ -109,4 +115,6 @@ public class StockManager
             }
         }
     }
+    
+    
 }
