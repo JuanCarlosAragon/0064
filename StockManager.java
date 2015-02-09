@@ -115,6 +115,25 @@ public class StockManager
             }
         }
     }
-    
-    
+    /**
+     * Busca un producto por su nombre
+     */
+     public Product findProduct(String name)
+    {
+        Product search = null;
+        Product toReturn = null;
+        boolean found = false;
+        Iterator<Product> it = stock.iterator();
+        
+        while((found == false) && it.hasNext()){
+            search = it.next();
+            if(search.getName().contains(name)){
+                found = true;
+                toReturn = search;
+            }
+        }
+        
+            
+        return toReturn;
+    }
 }
