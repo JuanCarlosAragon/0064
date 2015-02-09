@@ -25,4 +25,8 @@ public class Test
     public void testPrint(){
         stockmanager.printProductDetails();
     }
+    
+    public void testSearchProduct(int id){
+        System.out.println(stockmanager.findProduct(id).toString());
+    }
 }
