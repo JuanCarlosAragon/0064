@@ -98,4 +98,15 @@ public class StockManager
             System.out.println(product.toString());
         }
     }
+    /**
+     * Imprime por pantalla todos los detalles de los productos
+     * cuyo stock está por encima de la cantidad indicada.
+     */
+    public void printProductDownStock(int numberStock){
+        for(Product product : stock){
+            if(product.getQuantity() < numberStock){
+                System.out.println(product.toString());
+            }
+        }
+    }
 }
